@@ -1,0 +1,265 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+:root {
+	--bp-dg1: #10161a;
+	--bp-dg2: #182026;
+	--bp-dg3: #202b33;
+	--bp-dg4: #293742;
+	--bp-dg5: #30404d;
+	--bp-g1: #5c7080;
+	--bp-g2: #738694;
+	--bp-g3: #8a9ba8;
+	--bp-g4: #a7b6c2;
+	--bp-g5: #bfccd6;
+	--bp-lg1: #ced9e0;
+	--bp-lg2: #d8e1e8;
+	--bp-lg3: #e1e8ed;
+	--bp-lg4: #ebf1f5;
+	--bp-lg5: #f5f8fa;
+	--blue1: #0e5a8a;
+	--blue2: #106ba3;
+	--blue3: #137cbd;
+	--blue4: #2b95d6;
+	--blue5: #48aff0;
+	--green3: #0f9960;
+	--red3: #db3737;
+	--red2: #c23030;
+	--orange3: #d9822b;
+
+	--bg: var(--bp-lg4);
+	--panel: #ffffff;
+	--panel2: var(--bp-lg5);
+	--line: rgba(16, 22, 26, 0.15);
+	--line2: rgba(16, 22, 26, 0.25);
+	--text: var(--bp-dg2);
+	--muted: var(--bp-g1);
+	--faint: var(--bp-g3);
+	--btn-bg: var(--bp-lg5);
+	--btn-grad: linear-gradient(
+		to bottom,
+		rgba(255, 255, 255, 0.8),
+		rgba(255, 255, 255, 0)
+	);
+	--btn-shadow:
+		inset 0 0 0 1px rgba(16, 22, 26, 0.2), inset 0 -1px 0 rgba(16, 22, 26, 0.1);
+	--btn-shadow-h:
+		inset 0 0 0 1px rgba(16, 22, 26, 0.2), inset 0 -1px 0 rgba(16, 22, 26, 0.1),
+		0 1px 2px rgba(16, 22, 26, 0.1);
+	--card-shadow:
+		0 0 0 1px rgba(16, 22, 26, 0.15), 0 1px 1px rgba(16, 22, 26, 0.1);
+	--tag-ob-bg: rgba(219, 55, 55, 0.15);
+	--tag-ob-tx: var(--red2);
+	--tag-op-bg: rgba(19, 124, 189, 0.15);
+	--tag-op-tx: var(--blue2);
+	--chip-bg: rgba(15, 153, 96, 0.15);
+	--chip-tx: #0a6640;
+	--turno-bg: var(--bp-lg4);
+	--thead-bg: var(--bp-lg5);
+	--input-bg: #ffffff;
+	--input-shadow:
+		inset 0 0 0 1px rgba(16, 22, 26, 0.15),
+		inset 0 1px 1px rgba(16, 22, 26, 0.2);
+	--overlay-shadow:
+		0 0 0 1px rgba(16, 22, 26, 0.1), 0 4px 8px rgba(16, 22, 26, 0.2),
+		0 18px 46px 6px rgba(16, 22, 26, 0.2);
+	--scroll: var(--bp-g5);
+}
+
+[data-theme="dark"] {
+	--bg: var(--bp-dg4);
+	--panel: var(--bp-dg5);
+	--panel2: #394b59;
+	--line: rgba(16, 22, 26, 0.4);
+	--line2: rgba(16, 22, 26, 0.6);
+	--text: var(--bp-lg5);
+	--muted: var(--bp-g4);
+	--faint: var(--bp-g2);
+	--btn-bg: #394b59;
+	--btn-grad: linear-gradient(
+		to bottom,
+		rgba(255, 255, 255, 0.05),
+		rgba(255, 255, 255, 0)
+	);
+	--btn-shadow: 0 0 0 1px rgba(16, 22, 26, 0.4);
+	--btn-shadow-h:
+		0 0 0 1px rgba(16, 22, 26, 0.4), 0 1px 2px rgba(16, 22, 26, 0.4);
+	--card-shadow: 0 0 0 1px rgba(16, 22, 26, 0.4);
+	--tag-ob-bg: rgba(219, 55, 55, 0.25);
+	--tag-ob-tx: #ff7373;
+	--tag-op-bg: rgba(19, 124, 189, 0.25);
+	--tag-op-tx: var(--blue5);
+	--chip-bg: rgba(61, 204, 145, 0.2);
+	--chip-tx: #3dcc91;
+	--turno-bg: var(--bp-dg3);
+	--thead-bg: var(--bp-dg3);
+	--input-bg: rgba(16, 22, 26, 0.3);
+	--input-shadow:
+		inset 0 0 0 1px rgba(16, 22, 26, 0.4), inset 0 1px 1px rgba(16, 22, 26, 0.4);
+	--overlay-shadow:
+		0 0 0 1px rgba(16, 22, 26, 0.2), 0 4px 8px rgba(16, 22, 26, 0.4),
+		0 18px 46px 6px rgba(16, 22, 26, 0.4);
+	--scroll: var(--bp-dg2);
+}
+
+@theme inline {
+	--font-sans:
+		"Roboto", -apple-system, "Segoe UI", "Helvetica Neue", sans-serif;
+	--font-condensed: "Roboto Condensed", "Roboto", sans-serif;
+
+	--color-bg: var(--bg);
+	--color-panel: var(--panel);
+	--color-panel2: var(--panel2);
+	--color-text: var(--text);
+	--color-muted: var(--muted);
+	--color-faint: var(--faint);
+	--color-line: var(--line);
+	--color-line2: var(--line2);
+	--color-btn: var(--btn-bg);
+	--color-turno: var(--turno-bg);
+	--color-thead: var(--thead-bg);
+	--color-input: var(--input-bg);
+
+	--color-tag-ob-bg: var(--tag-ob-bg);
+	--color-tag-ob-tx: var(--tag-ob-tx);
+	--color-tag-op-bg: var(--tag-op-bg);
+	--color-tag-op-tx: var(--tag-op-tx);
+	--color-chip-bg: var(--chip-bg);
+	--color-chip-tx: var(--chip-tx);
+
+	--color-navy: var(--bp-dg2);
+	--color-navy-dark: var(--bp-dg1);
+	--color-navy-panel: var(--bp-dg3);
+	--color-navy-input: #394b59;
+	--color-navy-input-h: #30404d;
+	--color-on-navy: var(--bp-lg5);
+	--color-on-navy-muted: var(--bp-g3);
+
+	--color-blue1: var(--blue1);
+	--color-blue2: var(--blue2);
+	--color-blue3: var(--blue3);
+	--color-blue4: var(--blue4);
+	--color-blue5: var(--blue5);
+	--color-green3: var(--green3);
+	--color-red2: var(--red2);
+	--color-red3: var(--red3);
+	--color-orange3: var(--orange3);
+	--color-positive: #3dcc91;
+
+	--color-bp-lg1: var(--bp-lg1);
+	--color-bp-lg5: var(--bp-lg5);
+
+	--shadow-card: var(--card-shadow);
+	--shadow-btn: var(--btn-shadow);
+	--shadow-btn-h: var(--btn-shadow-h);
+	--shadow-input: var(--input-shadow);
+	--shadow-overlay: var(--overlay-shadow);
+	--shadow-intent:
+		inset 0 0 0 1px rgba(16, 22, 26, 0.4), inset 0 -1px 0 rgba(16, 22, 26, 0.2);
+	--shadow-block:
+		inset 0 0 0 1px rgba(16, 22, 26, 0.4), inset 0 -1px 0 rgba(16, 22, 26, 0.2);
+	--shadow-block-start:
+		inset 1px 1px 0 rgba(16, 22, 26, 0.4), inset -1px 0 0 rgba(16, 22, 26, 0.4);
+	--shadow-block-mid:
+		inset 1px 0 0 rgba(16, 22, 26, 0.4), inset -1px 0 0 rgba(16, 22, 26, 0.4);
+	--shadow-block-end:
+		inset 1px 0 0 rgba(16, 22, 26, 0.4),
+		inset -1px -1px 0 rgba(16, 22, 26, 0.4),
+		inset 0 -1px 0 rgba(16, 22, 26, 0.2);
+	--shadow-stat-inset: inset 0 0 0 1px rgba(16, 22, 26, 0.6);
+	--shadow-navy-btn: 0 0 0 1px rgba(16, 22, 26, 0.6);
+	--shadow-dot: inset 0 0 0 1px rgba(16, 22, 26, 0.3);
+	--shadow-hairline: 0 1px 0 var(--line);
+	--shadow-focus:
+		var(--input-shadow), 0 0 0 3px rgba(19, 124, 189, 0.3),
+		inset 0 0 0 1px var(--blue3);
+
+	--radius-bp: 0.1875rem;
+
+	--text-2xs: 0.625rem;
+}
+
+body {
+	background: var(--bg);
+	color: var(--text);
+	font-family: var(--font-sans);
+	font-size: 14px;
+	line-height: 1.45;
+	-webkit-font-smoothing: antialiased;
+}
+
+.cond {
+	font-family: var(--font-condensed);
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--scroll);
+	border-radius: 5px;
+	border: 2px solid var(--bg);
+}
+
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+@utility btn-grad {
+	background-image: var(--btn-grad);
+}
+
+@utility block-grad {
+	background-image: linear-gradient(
+		to bottom,
+		rgba(255, 255, 255, 0.1),
+		rgba(255, 255, 255, 0)
+	);
+}
+
+.subject-c0 {
+	background-color: #137cbd;
+}
+.subject-c1 {
+	background-color: #0f9960;
+}
+.subject-c2 {
+	background-color: #d9822b;
+}
+.subject-c3 {
+	background-color: #db3737;
+}
+.subject-c4 {
+	background-color: #d13913;
+}
+.subject-c5 {
+	background-color: #db2c6f;
+}
+.subject-c6 {
+	background-color: #8f398f;
+}
+.subject-c7 {
+	background-color: #7157d9;
+}
+.subject-c8 {
+	background-color: #2965cc;
+}
+.subject-c9 {
+	background-color: #00b3a4;
+}
+.subject-c10 {
+	background-color: #29a634;
+}
+.subject-c11 {
+	background-color: #a67908;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	* {
+		/* biome-ignore lint/complexity/noImportantStyles: precisa vencer as transições utilitárias */
+		transition: none !important;
+	}
+}
