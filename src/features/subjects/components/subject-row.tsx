@@ -1,3 +1,4 @@
+import { Eye, EyeOff } from "lucide-react";
 import { colorOf } from "@/features/subjects/utils/color-of";
 import { Button } from "@/shared/components/ui/button";
 import { Chip } from "@/shared/components/ui/chip";
@@ -43,45 +44,59 @@ export function SubjectRow({
 			<ColorDot colorClass={colorOf(subject.code)} />
 
 			<div className="min-w-0 flex-1">
-				<div className="flex min-w-0 items-center gap-1.75">
-					<h3
-						title={subject.name}
-						className={cn(
-							"truncate font-medium text-sm leading-snug",
-							mode === "done" && "line-through decoration-faint",
-						)}
-					>
-						{subject.name}
-					</h3>
-					<Tag type={subject.type} />
-				</div>
-				<div className="mt-px flex items-center gap-1.5 truncate text-muted text-xs tabular-nums">
-					<span className="truncate">{horario}</span>
-					{chips.map((chip) => (
-						<Chip key={chip} label={chip} />
-					))}
+				<h3
+					title={subject.name}
+					className={cn(
+						"truncate font-medium text-sm leading-snug",
+						mode === "done" && "line-through decoration-faint",
+					)}
+				>
+					{subject.name}
+				</h3>
+				<div className="mt-px truncate text-muted text-xs tabular-nums">
+					{horario}
 				</div>
 			</div>
 
-			<div className="flex shrink-0 gap-1.5">
+			<div className="flex w-22 shrink-0 items-center">
+				<Tag type={subject.type} />
+			</div>
+
+			<div className="flex w-22 shrink-0 flex-wrap items-center gap-1">
+				{chips.length > 0 ? (
+					chips.map((chip) => <Chip key={chip} label={chip} />)
+				) : (
+					<span className="text-faint text-xs">-</span>
+				)}
+			</div>
+
+			<div className="flex w-30 shrink-0 items-center justify-end gap-1.5">
 				{mode === "pend" ? (
 					<>
-						<Button
-							variant="subtle"
+						<button
+							type="button"
 							title="Ocultar da lista"
+							aria-label="Ocultar da lista"
 							onClick={() => onHide(subject.code)}
+							className="flex cursor-pointer items-center justify-center rounded-bp p-1.5 text-muted transition-colors hover:bg-muted/15 hover:text-text"
 						>
-							Ocultar
-						</Button>
+							<Eye className="size-4" />
+						</button>
 						<Button variant="primary" onClick={() => onAdd(subject.code)}>
 							Adicionar
 						</Button>
 					</>
 				) : null}
 				{mode === "hidden" ? (
-					<Button variant="subtle" onClick={() => onShow(subject.code)}>
-						Mostrar
-					</Button>
+					<button
+						type="button"
+						title="Mostrar na lista"
+						aria-label="Mostrar na lista"
+						onClick={() => onShow(subject.code)}
+						className="flex cursor-pointer items-center justify-center rounded-bp p-1.5 text-muted transition-colors hover:bg-muted/15 hover:text-text"
+					>
+						<EyeOff className="size-4" />
+					</button>
 				) : null}
 				{mode === "done" ? (
 					<Button

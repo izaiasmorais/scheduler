@@ -34,7 +34,7 @@ export function SubjectsPanel() {
 	}
 
 	return (
-		<aside className="flex w-120 min-w-120 flex-col border-line border-r bg-panel max-lg:h-auto max-lg:max-h-[46vh] max-lg:w-full max-lg:min-w-0">
+		<aside className="flex w-152 min-w-152 flex-col border-line border-r bg-panel max-lg:h-auto max-lg:max-h-[46vh] max-lg:w-full max-lg:min-w-0">
 			<SubjectSearch value={query} onChange={setQuery} />
 			<SubjectList query={query} onAdd={handleAdd} />
 			<TurmaDialog code={dialogCode} onClose={() => setDialogCode(null)} />
