@@ -45,11 +45,21 @@ export function ScheduleTabs() {
 					>
 						<button
 							type="button"
-							className="cursor-pointer bg-transparent"
+							className="flex cursor-pointer items-center gap-2 bg-transparent"
 							onClick={() => setActive(schedule.id)}
 							onDoubleClick={() => handleRename(schedule.id, schedule.name)}
 						>
 							{schedule.name}
+							<span
+								className={cn(
+									"flex h-4.5 min-w-4.5 items-center justify-center rounded-full px-1 font-bold text-2xs tabular-nums",
+									isActive
+										? "bg-white/20 text-white"
+										: "bg-black/10 text-muted dark:bg-white/10",
+								)}
+							>
+								{schedule.items.length}
+							</span>
 						</button>
 						{schedules.length > 1 ? (
 							<button
