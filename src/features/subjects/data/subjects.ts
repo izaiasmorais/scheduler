@@ -262,7 +262,7 @@ export const SUBJECTS: Subject[] = [
 	},
 	{
 		code: "LIBRAS012",
-		name: "LIBRAS — Língua Brasileira de Sinais",
+		name: "LIBRAS - Língua Brasileira de Sinais",
 		type: "OP",
 		done: true,
 		turmas: [{ t: "02", doc: "A definir", vg: 30, h: "35T34" }],

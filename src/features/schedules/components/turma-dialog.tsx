@@ -62,7 +62,7 @@ function TurmaDialogBody({
 					/>
 					<span className="flex-1">
 						<b className="block font-medium text-sm">
-							Turma {turma.t} — {turma.doc}
+							Turma {turma.t} · {turma.doc}
 						</b>
 						<span className="block text-muted text-xs">
 							{fmtHorario(turma.h)} · {turma.vg} vagas
@@ -103,7 +103,7 @@ export function TurmaDialog({ code, onClose }: TurmaDialogProps) {
 			open
 			onClose={onClose}
 			title={subject.name}
-			subtitle={`${subject.code} · será adicionada em "${activeName}" — escolha a turma`}
+			subtitle={`${subject.code} · será adicionada em "${activeName}" · escolha a turma`}
 		>
 			<TurmaDialogBody
 				key={subject.code}

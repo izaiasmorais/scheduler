@@ -1,4 +1,4 @@
-# Scheduler — Planejador de Cronogramas · CC UFPI 2026.2
+# Scheduler · Planejador de Cronogramas · CC UFPI 2026.2
 
 App React + Vite para montar cronogramas de disciplinas da graduação em Ciência da
 Computação da UFPI (oferta oficial 2026.2). Lista as matérias, monta a grade semanal,
